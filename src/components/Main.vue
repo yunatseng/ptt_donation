@@ -33,11 +33,13 @@
 
     <v-row>
       <v-col cols="12">
+        <div :style="{ backgroundImage:  `url(${require('@/assets/bg.jpg')})` }">
         <div
           class="font-weight-bold title mb-2 text-center"
           :class="{'':$vuetify.breakpoint.smAndDown}"
         >
           僅列舉 109~110 年部分事故
+        </div>
         </div>
       </v-col>
     </v-row>
