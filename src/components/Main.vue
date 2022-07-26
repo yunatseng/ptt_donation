@@ -73,6 +73,20 @@
         </v-carousel>
       </v-col>
     </v-row>
+     <v-row>
+      <v-col cols="12" style="background-color: #bcae9c">
+        <div class="title ma-5 ma-md-10 text-center" :class="{'subtitle-1': $vuetify.breakpoint.smAndDown}">延伸閱讀</div>
+              <v-alert
+        text
+        dense
+        color="lime darken-4"
+        icon="mdi-read"
+        border="left"
+      >
+    <ul><li>123</li></ul>
+      </v-alert>
+      </v-col>
+    </v-row>
     <v-row>
       <v-col cols="12" style="background-color: #bcae9c">
         <div id="disqus_thread"></div>
