@@ -16,13 +16,13 @@
         <v-container class="fill-height">
           <v-row
             align="center"
-            :class="$vuetify.breakpoint.smAndDown ? 'pl-4 pr-6' : ''"
+            :class="$vuetify.breakpoint.smAndDown ? 'pa-6' : ''"
           >
-            <div class="text-lg-h3 text-md-h3 text-h5 font-weight-regular">
+            <div class="ma-5 text-lg-h3  text-md-h3 text-h5 font-weight-regular" :class="{'text-center': $vuetify.breakpoint.smAndDown}">
               PTT 超商挖眼案 捐款紀錄
             </div>
             <v-row justify="center">
-              <div class="text-lg-h5 text-md-h5 font-weight-light ml-3">
+              <div class="text-lg-h5 text-md-h5 font-weight-light">
                 Sep 26, 2021
               </div>
             </v-row>
@@ -30,7 +30,18 @@
         </v-container>
       </v-img>
     </v-row>
-
+    <v-row>
+      <v-col cols="12" style="background-color: #bcae9c; color: #3e3a35">
+        <div class="title ma-5 ma-md-16 text-center" :class="{'subtitle-1': $vuetify.breakpoint.smAndDown}">
+          2021 年 9 月 26
+          日，屏東縣高樹鄉一名女性超商店員因提醒患有精神疾病的男子戴好口罩，遭男子攻擊臉部且遭徒手挖眼¹。<br />
+          2021 年 10 月 3 日，一篇標題為「 [問卦]
+          幹你娘，屏東挖眼案通通給我洗起來！」的 PTT 文章² 由網友 lovea 首 Po
+          後開始發酵，截至目前（2022/07/01）共有 <strong>1209</strong>
+          篇回文，其中更不乏眾多熱心鄉民捐款³，為的就是希望能幫助到該名超商女店員。
+        </div>
+      </v-col>
+    </v-row>
     <v-row>
       <v-col
         cols="12"
@@ -39,15 +50,21 @@
       >
         <v-carousel
           cycle
-          height="800"
+          height="850"
           hide-delimiter-background
           show-arrows-on-hover
         >
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
-            <v-sheet color="#d3c9cb3d" height="100%">
-              <v-row class="fill-height" style="flex-wrap: nowrap;margin:30px"  justify="center">
-                <div class="text-h6" style="width: 40%; ">作者：{{ slide.author }}</div>
-                <div class="text-body-1" style="width: 45%;">
+            <v-sheet color="#d3c9cb3d" height="110%">
+              <v-row
+                class="fill-height"
+                style="flex-wrap: nowrap; padding: 60px"
+                justify="center"
+              >
+                <div class="text-h6" style="width: 40%">
+                  作者：{{ slide.author }}
+                </div>
+                <div class="text-body-1" style="width: 45%">
                   {{ slide.final_text }}
                 </div>
               </v-row>
@@ -56,10 +73,33 @@
         </v-carousel>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col cols="12" style="background-color: #bcae9c">
+        <div id="disqus_thread"></div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+/*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+(function () {
+  // DON'T EDIT BELOW THIS LINE
+  var d = document,
+    s = d.createElement("script");
+  s.src = "https://ptt-1.disqus.com/embed.js";
+  s.setAttribute("data-timestamp", +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+
 export default {
   name: "Main",
 
