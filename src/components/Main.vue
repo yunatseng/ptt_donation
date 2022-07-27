@@ -18,7 +18,10 @@
             align="center"
             :class="$vuetify.breakpoint.smAndDown ? 'pa-6' : ''"
           >
-            <div class="ma-5 text-lg-h3  text-md-h3 text-h5 font-weight-regular" :class="{'text-center': $vuetify.breakpoint.smAndDown}">
+            <div
+              class="ma-5 text-lg-h3 text-md-h3 text-h5 font-weight-regular"
+              :class="{ 'text-center': $vuetify.breakpoint.smAndDown }"
+            >
               PTT 超商挖眼案 捐款紀錄
             </div>
             <v-row justify="center">
@@ -32,7 +35,10 @@
     </v-row>
     <v-row>
       <v-col cols="12" style="background-color: #bcae9c; color: #3e3a35">
-        <div class="title ma-5 ma-md-16 text-center" :class="{'subtitle-1': $vuetify.breakpoint.smAndDown}">
+        <div
+          class="title ma-5 ma-md-16 text-center"
+          :class="{ 'subtitle-1': $vuetify.breakpoint.smAndDown }"
+        >
           2021 年 9 月 26
           日，屏東縣高樹鄉一名女性超商店員因提醒患有精神疾病的男子戴好口罩，遭男子攻擊臉部且遭徒手挖眼¹。<br />
           2021 年 10 月 3 日，一篇標題為「 [問卦]
@@ -61,11 +67,24 @@
                 style="flex-wrap: nowrap; padding: 60px"
                 justify="center"
               >
-                <div class="text-h6" style="width: 40%">
-                  作者：{{ slide.author }}
+                <div class="text-h6" style="width: 40%; text-align: center">
+                  作者：{{ slide.author }}<br />
+                  {{ slide.date }}
                 </div>
-                <div class="text-body-1" style="width: 45%">
-                  {{ slide.final_text }}
+                <div class="text-subtitle-1" style="width: 52%;font-size:1.1rem !important;">
+                  {{ textWithoutUrl(slide.final_text) }}
+                  <div
+                    style="text-align: center"
+                    v-if="textImgUrl(slide.final_text).length > 0"
+                  >
+                    <img
+                      style="width: 40%; margin-top: 50px"
+                      v-for="(url, i) in textImgUrl(slide.final_text)"
+                      :key="i"
+                      :src="textImgUrl(slide.final_text)[i]"
+                      alt="圖片"
+                    />
+                  </div>
                 </div>
               </v-row>
             </v-sheet>
@@ -73,18 +92,19 @@
         </v-carousel>
       </v-col>
     </v-row>
-     <v-row>
+    <v-row>
       <v-col cols="12" style="background-color: #bcae9c">
-        <div class="title ma-5 ma-md-10 text-center" :class="{'subtitle-1': $vuetify.breakpoint.smAndDown}">延伸閱讀</div>
-              <v-alert
-        text
-        dense
-        color="lime darken-4"
-        icon="mdi-read"
-        border="left"
-      >
-    <ul><li>123</li></ul>
-      </v-alert>
+        <div
+          class="title ma-5 ma-md-10 text-center"
+          :class="{ 'subtitle-1': $vuetify.breakpoint.smAndDown }"
+        >
+          延伸閱讀
+        </div>
+        <v-alert text dense color="lime darken-4" icon="mdi-read" border="left">
+          <ul>
+            <li>123</li>
+          </ul>
+        </v-alert>
       </v-col>
     </v-row>
     <v-row>
@@ -145,5 +165,19 @@ export default {
       },
     ],
   }),
+  methods: {
+    textWithoutUrl(text) {
+      const textArr = text.split(" ");
+      const plainText = textArr.filter(
+        (i) => !(i.includes("http") || i.length === 0)
+      );
+      return plainText.join(" ");
+    },
+    textImgUrl(text) {
+      const textArr = text.split(" ");
+      const imgUrl = textArr.filter((i) => i.includes("http"));
+      return imgUrl;
+    },
+  },
 };
 </script>
