@@ -34,13 +34,13 @@
       </v-img>
     </v-row>
     <v-row>
-      <v-col cols="12" style="background-color: #bcae9c; color: #3e3a35">
+      <v-col cols="12" style="background-color: rgb(187 181 174); color: #3e3a35">
         <div
           class="title ma-5 ma-md-16 text-center"
           :class="{ 'subtitle-1': $vuetify.breakpoint.smAndDown }"
         >
           2021 年 9 月 26
-          日，屏東縣高樹鄉一名女性超商店員因提醒患有精神疾病的男子戴好口罩，遭男子攻擊臉部且遭徒手挖眼¹。<br />
+          日，屏東縣高樹鄉一名女性超商店員因提醒楊姓男子戴口罩、別在店門口違法抽菸，遭男子攻擊臉部且遭徒手挖眼¹。<br />
           2021 年 10 月 3 日，一篇標題為「 [問卦]
           幹你娘，屏東挖眼案通通給我洗起來！」的 PTT 文章² 由網友 lovea 首 Po
           後開始發酵，截至目前（2022/07/01）共有 <strong>1209</strong>
@@ -93,7 +93,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" style="background-color: #bcae9c">
+      <v-col cols="12" style="background-color: rgb(180 172 162)">
         <div
           class="title ma-5 ma-md-10 text-center"
           :class="{ 'subtitle-1': $vuetify.breakpoint.smAndDown }"
@@ -108,7 +108,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" style="background-color: #bcae9c">
+      <v-col cols="12" style="background-color: rgb(180 172 162)">
         <div id="disqus_thread"></div>
       </v-col>
     </v-row>
