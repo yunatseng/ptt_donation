@@ -3,8 +3,8 @@
     <v-row>
       <v-img
         class="white--text"
-        src="@/assets/ptt_banner.jpg"
-        gradient="to top right, rgba(15,15,18,.5), rgba(25,25,30,.8)"
+        src="@/assets/ptt_banner2.jpg"
+        gradient="to top , rgba(181, 169, 146,.65), rgba(59, 56, 11,.8)"
         :lazy-src="`https://picsum.photos/10/6?image=1`"
         :height="$vuetify.breakpoint.smAndDown ? '100%' : '400'"
       >
@@ -16,19 +16,19 @@
         <v-container class="fill-height">
           <v-row
             align="center"
-            :class="$vuetify.breakpoint.smAndDown ? 'pa-6' : ''"
+            style="justify-content: center;"
           >
             <div
-              class="ma-5 text-lg-h3 text-md-h3 text-h5 font-weight-regular"
+              class="ma-5 text-subtitle-1 text-md-h3"
               :class="{ 'text-center': $vuetify.breakpoint.smAndDown }"
             >
               PTT 超商挖眼案 捐款紀錄
             </div>
-            <v-row justify="center">
-              <div class="text-lg-h5 text-md-h5 font-weight-light">
+            
+              <div class="text-subtitle-1 text-md-h5">
                 Sep 26, 2021
               </div>
-            </v-row>
+      
           </v-row>
         </v-container>
       </v-img>
@@ -70,8 +70,8 @@
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet color="#d3c9cb3d" height="110%">
               <v-row
-                class="fill-height"
-                style="flex-wrap: nowrap; padding: 60px"
+                class="fill-height pa-6 pa-md-60"
+                style="flex-wrap: nowrap; "
                 justify="center"
               >
                 <div class="text-h6" style="width: 40%; text-align: center">
@@ -240,7 +240,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 a {
   text-decoration: none;
 }
