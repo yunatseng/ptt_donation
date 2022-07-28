@@ -3,6 +3,9 @@ module.exports = {
   transpileDependencies: [
     'vuetify'
   ],
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/ptt_donation/'
+    : '/',
   configureWebpack: {
     resolve: {
       alias: {
