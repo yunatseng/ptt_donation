@@ -70,17 +70,19 @@
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet color="#d3c9cb3d" height="110%">
               <v-row
-                class="fill-height pa-6 pa-md-60"
+                class="fill-height pa-6 pa-md-15"
+                :class="{'flex-column':$vuetify.breakpoint.smAndDown}"
                 style="flex-wrap: nowrap; "
                 justify="center"
               >
-                <div class="text-h6" style="width: 40%; text-align: center">
+                <div class="text-h6" :class="{'carousel-text1':$vuetify.breakpoint.smAndDown}" style="width: 40%; text-align: center">
                   作者：{{ slide.author }}<br />
                   {{ slide.date }}
                 </div>
                 <div
                   class="text-subtitle-1"
-                  style="width: 52%; font-size: 1.1rem !important"
+                  :class="{'carousel-text2':$vuetify.breakpoint.smAndDown}"
+                  style="width: 52%; "
                 >
                   {{ textWithoutUrl(slide.final_text) }}
                   <div
@@ -243,5 +245,14 @@ export default {
 <style>
 a {
   text-decoration: none;
+}
+.carousel-text1{
+  font-size: 18px !important;
+  width: 100% !important;
+}
+.carousel-text2{
+  margin-top: 15px;
+  width: 100% !important;
+  font-size: 16px !important;
 }
 </style>
