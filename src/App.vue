@@ -1,34 +1,18 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+      <h3 class="ml-2 title font-weight-light">
+        PTT 超商挖眼案
+      </h3>
 
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://www.judicial.gov.tw/tw/cp-1888-658196-cc1ee-1.html"
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">最新判決</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -68,7 +52,7 @@
         <v-card-text class="white--text text-center">
           © {{ new Date().getFullYear() }} — Skylar
           <a
-            href="mailto:fav0124@gmail.com"
+            href="mailto:yun.yuna.tseng@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             ><v-icon>mdi-email</v-icon></a

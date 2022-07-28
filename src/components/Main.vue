@@ -34,17 +34,24 @@
       </v-img>
     </v-row>
     <v-row>
-      <v-col cols="12" style="background-color: rgb(187 181 174); color: #3e3a35">
-        <div
-          class="title ma-5 ma-md-16 text-center"
-          :class="{ 'subtitle-1': $vuetify.breakpoint.smAndDown }"
-        >
-          2021 年 9 月 26
-          日，屏東縣高樹鄉一名女性超商店員因提醒楊姓男子戴口罩、別在店門口違法抽菸，遭男子攻擊臉部且遭徒手挖眼¹。<br />
-          2021 年 10 月 3 日，一篇標題為「 [問卦]
-          幹你娘，屏東挖眼案通通給我洗起來！」的 PTT 文章² 由網友 lovea 首 Po
-          後開始發酵，截至目前（2022/07/01）共有 <strong>1209</strong>
-          篇回文，其中更不乏眾多熱心鄉民捐款³，為的就是希望能幫助到該名超商女店員。
+      <v-col
+        cols="12"
+        style="background-color: #ccc5be; color: #3e3a35"
+      >
+        <div class="ma-5 ma-md-16 text-center">
+          <v-alert
+            outlined
+            color="lime darken-4"
+            class="text-subtitle-1 text-md-h6"
+          >
+            2021 年 9 月 26
+            日，屏東縣一名女性超商店員因提醒楊姓男子戴口罩、別在店門口抽菸，遭男子攻擊臉部且遭徒手挖眼¹。<br />
+            2021 年 10 月 3 日，一篇標題為「 [問卦]
+            幹你娘，屏東挖眼案通通給我洗起來！」的 PTT 文章² 由網友 lovea 首 Po
+            後開始發酵，截至目前（2022/07/01）共有
+            <strong>1209</strong>
+            篇回文，其中更不乏眾多熱心鄉民捐款³，為的就是希望能幫助到該名超商女店員。</v-alert
+          >
         </div>
       </v-col>
     </v-row>
@@ -71,7 +78,10 @@
                   作者：{{ slide.author }}<br />
                   {{ slide.date }}
                 </div>
-                <div class="text-subtitle-1" style="width: 52%;font-size:1.1rem !important;">
+                <div
+                  class="text-subtitle-1"
+                  style="width: 52%; font-size: 1.1rem !important"
+                >
                   {{ textWithoutUrl(slide.final_text) }}
                   <div
                     style="text-align: center"
@@ -93,22 +103,71 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" style="background-color: rgb(180 172 162)">
-        <div
-          class="title ma-5 ma-md-10 text-center"
-          :class="{ 'subtitle-1': $vuetify.breakpoint.smAndDown }"
-        >
-          延伸閱讀
+      <v-col cols="12" style="background-color: #ccc5be">
+        <div class="ma-5 ma-md-16 text-center">
+          <v-alert
+            outlined
+            color="lime darken-4"
+            class="text-subtitle-1 text-md-h6"
+            >延伸閱讀</v-alert
+          >
         </div>
-        <v-alert text dense color="lime darken-4" icon="mdi-read" border="left">
+        <v-alert text color="lime darken-4" border="left">
+          <p><strong>相關法條討論</strong></p>
           <ul>
-            <li>123</li>
+            <li>
+              <a
+                style="color: #231306"
+                href="https://drive.google.com/file/d/103ddeuTXk4tA3R38unoXdotlxYCEWbCd/view"
+                >民間版《精神衛生法》說明及全文</a
+              >
+            </li>
+            <li>
+              <a
+                style="color: #231306"
+                href="https://isbn.ncl.edu.tw/NEW_ISBNNet/main_DisplayRecord.php?&Pact=Display&Pstart=1"
+                >正常與瘋狂的天秤: 談精神疾病與司法鑑定</a
+              >
+            </li>
+            <li>
+              <a
+                style="color: #231306"
+                href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020030"
+                >現行精神衛生法條文</a
+              >
+            </li>
+          </ul>
+          <v-divider style="margin: 18px" />
+
+          <p><strong>相關新聞</strong></p>
+          <ul>
+            <li>
+              <a
+                style="color: #231306"
+                href="https://www.cna.com.tw/news/firstnews/202111210025.aspx"
+                >超商店員疑勸戴口罩遭刺死 犯嫌遭羈押</a
+              >
+            </li>
+            <li>
+              <a
+                style="color: #231306"
+                href="https://www.cna.com.tw/news/asoc/202110200372.aspx"
+                >未戴口罩被提醒惱羞毆打超商店員顧客 桃園男送辦</a
+              >
+            </li>
+            <li>
+              <a
+                style="color: #231306"
+                href="https://www.cna.com.tw/news/asoc/202110270059.aspx"
+                >不滿被要求戴口罩 台中醉男毆打店員遭法辦</a
+              >
+            </li>
           </ul>
         </v-alert>
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" style="background-color: rgb(180 172 162)">
+      <v-col cols="12" style="background-color: #ccc5be">
         <div id="disqus_thread"></div>
       </v-col>
     </v-row>
@@ -181,3 +240,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>
