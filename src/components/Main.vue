@@ -14,30 +14,21 @@
           </v-row>
         </template>
         <v-container class="fill-height">
-          <v-row
-            align="center"
-            style="justify-content: center;"
-          >
+          <v-row align="center" style="justify-content: center">
             <div
               class="ma-5 text-subtitle-1 text-md-h3"
               :class="{ 'text-center': $vuetify.breakpoint.smAndDown }"
             >
               PTT 超商挖眼案 捐款紀錄
             </div>
-            
-              <div class="text-subtitle-1 text-md-h5">
-                Sep 26, 2021
-              </div>
-      
+
+            <div class="text-subtitle-1 text-md-h5">Sep 26, 2021</div>
           </v-row>
         </v-container>
       </v-img>
     </v-row>
     <v-row>
-      <v-col
-        cols="12"
-        style="background-color: #ccc5be; color: #3e3a35"
-      >
+      <v-col cols="12" style="background-color: #ccc5be; color: #3e3a35">
         <div class="ma-5 ma-md-16 text-center">
           <v-alert
             outlined
@@ -70,19 +61,26 @@
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet color="#d3c9cb3d" height="110%">
               <v-row
-                class="fill-height pa-6 pa-md-15 justify-space-evenly justify-md-center"
-                :class="{'flex-column':$vuetify.breakpoint.smAndDown}"
-                style="flex-wrap: nowrap; "
-                
+                class="
+                  fill-height
+                  pa-6 pa-md-15
+                  justify-space-evenly justify-md-center
+                "
+                :class="{ 'flex-column': $vuetify.breakpoint.smAndDown }"
+                style="flex-wrap: nowrap"
               >
-                <div class="text-md-h6" :class="{'carousel-text1':$vuetify.breakpoint.smAndDown}" style="width: 40%; text-align: center">
+                <div
+                  class="text-md-h6"
+                  :class="{ 'carousel-text1': $vuetify.breakpoint.smAndDown }"
+                  style="width: 40%; text-align: center"
+                >
                   作者：{{ slide.author }}<br />
                   {{ slide.date }}
                 </div>
                 <div
                   class="text-md-subtitle-1"
-                  :class="{'carousel-text2':$vuetify.breakpoint.smAndDown}"
-                  style="width: 52%; "
+                  :class="{ 'carousel-text2': $vuetify.breakpoint.smAndDown }"
+                  style="width: 52%"
                 >
                   {{ textWithoutUrl(slide.final_text) }}
                   <div
@@ -90,8 +88,8 @@
                     v-if="textImgUrl(slide.final_text).length > 0"
                   >
                     <img
-                      style="width: 40%; margin-top: 50px;margin-left:10px"
-                      :class="{'carousel-img':$vuetify.breakpoint.smAndDown}"
+                      style="width: 40%; margin-top: 50px; margin-left: 10px"
+                      :class="{ 'carousel-img': $vuetify.breakpoint.smAndDown }"
                       v-for="(url, i) in textImgUrl(slide.final_text)"
                       :key="i"
                       :src="textImgUrl(slide.final_text)[i]"
@@ -147,7 +145,6 @@
             <li>
               <a
                 class="related-links"
-               
                 href="https://www.cna.com.tw/news/firstnews/202111210025.aspx"
                 >超商店員疑勸戴口罩遭刺死 犯嫌遭羈押</a
               >
@@ -179,7 +176,7 @@
 </template>
 
 <script>
-import PTT_DATA  from '../data/data';
+import PTT_DATA from "../data/data";
 /**
  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
@@ -200,18 +197,15 @@ import PTT_DATA  from '../data/data';
 
 export default {
   name: "Main",
-  data: () => ({
-   
-  }),
-  computed:{
-    slides(){
-      return this.shuffleArray(PTT_DATA).slice(0,14)
-    }
+  data: () => ({}),
+  computed: {
+    slides() {
+      return this.shuffleArray(PTT_DATA).slice(0, 14);
+    },
   },
   methods: {
-    shuffleArray(inputArray){
-      inputArray.sort(()=> Math.random() - 0.5);
-      return inputArray
+    shuffleArray(inputArray) {
+      return inputArray.sort(() => Math.random() - 0.5);
     },
     textWithoutUrl(text) {
       const textArr = text.split(" ");
@@ -232,24 +226,24 @@ export default {
 a {
   text-decoration: none;
 }
-.carousel-text1{
+.carousel-text1 {
   font-size: 18px !important;
   width: 100% !important;
   font-weight: bold;
   height: 60px;
 }
-.carousel-text2{
+.carousel-text2 {
   margin-top: 15px;
   width: 100% !important;
   font-size: 16px !important;
 }
-.carousel-img{
+.carousel-img {
   width: 60% !important;
   margin-top: 30px !important;
-  margin-left:0 !important
+  margin-left: 0 !important;
 }
-.related-links{
+.related-links {
   font-style: 14px;
-  color: #231306 !important
+  color: #231306 !important;
 }
 </style>
